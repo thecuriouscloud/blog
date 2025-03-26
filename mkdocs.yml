@@ -1,0 +1,40 @@
+site_name: CuriousCloud
+site_description: Your trusted cloud sec
+theme: 
+  name: material
+  palette:
+  # Dark Mode
+  - scheme: slate
+    toggle:
+      icon: material/weather-sunny
+      name: Dark mode
+    primary: deep orange
+    accent: deep purple
+
+  # Ligh Mode
+  - scheme: default
+    toggle: 
+      icon: material/weather-night
+      name: Light mode
+    primary: blue
+    accent: deep orange
+
+plugins:
+  - search
+  - blog:
+      post_excerpt: required
+      blog_dir: .
+      post_url_format: "{slug}"
+  - tags
+
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
