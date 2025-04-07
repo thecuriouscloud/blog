@@ -9,7 +9,7 @@ categories:
 tags: 
     - EC2
 authors:
-    - nicolas
+    - TheCuriousCloud
 ---
 
 A few weeks ago, I came across a fantastic [post](https://securitylabs.datadoghq.com/articles/whoami-a-cloud-image-name-confusion-attack/) from Datadog security's team about name confusion attacks in AWS AMI's and how using the Allowed AMI feature can help prevent this attack vector. While digging into it and declarative policies, I realized there aren't many blog posts out there covering them since they are recent features, hence this post. 
