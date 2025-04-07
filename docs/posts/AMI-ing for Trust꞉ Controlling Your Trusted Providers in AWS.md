@@ -18,7 +18,7 @@ A few weeks ago, I came across a fantastic [post](https://securitylabs.datadoghq
 
 ## Understanding AMIs
 
-Before we dive in, we need to understand what AMIs (Amazon Machine Images) are. They are pre-configured virtual machines that contain the operating system, application server, and applications needed to run an instance on AWS. They are used to quickly launch instances in the cloud with specific configurations and software. AMIs allow for consistency, scalability, and easy replication of environments. Essentially, they act as templates for EC2 instances.
+Before we dive in, it's important to understand what AMIs (Amazon Machine Images) are. They are pre-configured virtual machines that contain the operating system, application server, and applications needed to run an instance on AWS. They are used to quickly launch instances in the cloud with specific configurations and software. AMIs allow for consistency, scalability, and easy replication of environments. Essentially, they act as templates for EC2 instances.
 
 ## Why is important to control them?
 
@@ -32,7 +32,7 @@ Allowed AMIs is a new account-wide setting introduced in December 2024 that enab
 
 !!! note
 
-    Before we move any further, I'd like to highlight that this feature only restricts AMIs at the AMI provider level (i.e. if an image comes from Amazon, from the marketplace, from another AWS account, etc.). __It cannot restrict specific AMIs by ID.__
+    Before we move any further, I'd like to highlight that this feature only restricts AMIs at the provider level (i.e. if an image comes from Amazon, from the marketplace or from another AWS account) __It cannot restrict specific AMIs by ID.__
 
 Enabling this feature is pretty straightforward:
 
@@ -43,7 +43,7 @@ Enabling this feature is pretty straightforward:
 
 It's worth noting that this feature is regional, so you will need to configure it in every AWS region you use. If you have a handful of AWS accounts and only operate in a few regions, you probably can simply use the Web UI as it would be a one-off configuration. 
 
-However, maintaining this can be hard, especially when the AWS organization grows so we would need an alternative to ClickOps. These could be some sort of automation via the AWS CLI, but even when the CLI is used, it doesn't scale well in large AWS organizations with hundreds or even thousands of accounts, so we need a better solution. 
+However, maintaining this can be hard, especially when the AWS organization grows so we would need an alternative to ClickOps. The alternative could be some sort of automation via the AWS CLI, but even when the CLI is used, it doesn't scale well in large AWS organizations with hundreds or even thousands of accounts, so we need a better solution. 
 
 ## Declarative Policies for the win
 Alongside the Allowed AMIs feature, AWS announced a new type of organization policy that allows organizations to define and enforce standardized configurations for AWS services across multiple accounts: __Declarative Policies.__
@@ -115,7 +115,7 @@ And just as simple as that, you can implement an additional layer of defense to 
 
 !!! note
 
-    A side benefit of using declarative policies is that the Allowed AMI setting cannot be overridden in member accounts, eliminating the need to manage user permissions related to this setting.". 
+    A side benefit of using declarative policies is that the Allowed AMI setting cannot be overridden in member accounts, eliminating the need to manage user permissions related to this setting. 
 
     
 
